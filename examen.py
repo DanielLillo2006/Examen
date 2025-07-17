@@ -51,9 +51,20 @@ def busqueda_precio():
 
 
 def stock_marca():
- input('Ingrese marca a consultar: ').upper()
-for lista in stock.items():
- print (f"el stock es: {lista[2]} ")
+    modelo = []
+    total = 0
+    marca = input("ingrese marca a consultar: ")
+    for clav, valo in productos.items():
+        if marca.lower() == valo[0].lower():
+            modelo.append(clav)
+    if not modelo:
+        print(f"No se encontraron productos de la marca {marca}")
+        return
+    for modelo_actual in modelo:
+        if modelo_actual in stock:
+            cantidad, precio = stock[modelo_actual]
+            total += cantidad
+    print(f"El stock total para la marca {marca} es: {total}")
 
 
 def mostrar(): 
