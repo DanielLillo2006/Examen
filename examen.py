@@ -8,11 +8,7 @@ productos = {
 '342FHD': ['Acer', 15.6, '8GB', 'DD', '1T', 'AMD Ryzen 7', 'Nvidia GTX1050'], #notebook acer $444990, 7
 'UWU131HD': ['Dell', 15.6, '8GB', 'DD', '1T', 'AMD Ryzen 3', 'Nvidia GTX1050'], #notebook dell $349990, 1
 } 
-stock = {
-'8475HD': [387.990,10], '2175HD': [327.990,4], 'JjfFHD': [424.990,1],
-'fgdxFHD': [664.990,21], '123FHD': [290.890,32], '342FHD': [444.990,7],
-'GF75HD': [749.990,2], 'UWU131HD': [349.990,1], 'FS1230HD': [249.990,0],
- }
+
 def busqueda_precio():
     while True:
         try:
