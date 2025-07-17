@@ -67,9 +67,9 @@ def stock_marca():
     print(f"El stock total para la marca {marca} es: {total}")
 
 
-def mostrar(): 
- for compu, lista in productos.items():
-  print(f'compu: {lista[0]} modelo: {compu[0]} ram: {lista[2]} disco: {lista[4]}') 
+def mostrar():
+    for compu, lista in productos.items():
+        print(f'compu: {lista[0]} modelo: {compu} ram: {lista[2]} disco: {lista[4]}')
 
 
 while True:
@@ -82,7 +82,7 @@ while True:
  if opc=="1":
   stock_marca()
  elif opc=="2":
-  busqueda_por_precio()
+  busqueda_precio()
  elif opc=="3":
   mostrar()
  elif opc=="4":
