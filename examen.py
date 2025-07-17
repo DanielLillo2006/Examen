@@ -13,13 +13,49 @@ stock = {
 'fgdxFHD': [664.990,21], '123FHD': [290.890,32], '342FHD': [444.990,7],
 'GF75HD': [749.990,2], 'UWU131HD': [349.990,1], 'FS1230HD': [249.990,0],
  }
-def busqueda_por_precio():
- input("Ingrese precio minimo: ")
- input("Ingrese precio maximo: ")
+def busqueda_precio():
+    while True:
+        try:
+            precio_min = int(input('Ingrese el precio mínimo: '))
+            precio_max = int(input('Ingrese el precio máximo: '))
+
+            if precio_min < 249990:
+                print('No hay notebooks en ese rango de precio')
+            elif precio_max > 749990:
+                print('No hay notebooks en ese rango de precio')
+            else:
+                modelos_encontrados = []
+                for clave, valor in stock.items():
+                    precio = valor[0]
+
+                    if precio_min <= precio <= precio_max:
+                        if clave in productos:
+                            detalles_producto = productos[clave]
+                            marca = detalles_producto[0]
+                            almacenamiento = detalles_producto[4]
+                            modelos_encontrados.append(f'Modelo: {clave} | Marca: {marca} | Almacenamiento: {almacenamiento} | Precio: {precio}')
+                        else:
+                            modelos_encontrados.append(f'Modelo: {clave} | Precio: {precio} (sin detalles en productos)')
+
+                if modelos_encontrados:
+                    print('Los notebooks entre los precios indicados son:')
+                    for linea_modelo in modelos_encontrados:
+                        print(linea_modelo)
+                    break
+                else:
+                    print('No se encontraron modelos en ese rango de precio')
+                    break
+        except ValueError:
+            print('Debe ingresar valores enteros!!')
+
+
+
 def stock_marca():
  input('Ingrese marca a consultar: ').upper()
 for lista in stock.items():
  print (f"el stock es: {lista[2]} ")
+
+
 def mostrar(): 
  for compu, lista in productos.items():
   print(f'compu: {lista[0]} modelo: {compu[0]} ram: {lista[2]} disco: {lista[4]}') 
